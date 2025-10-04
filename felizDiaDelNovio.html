@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz día del novio 💖</title>
+  <style>
+    /* Fondo tipo atardecer */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(to top, #ff9966, #ff5e62);
+      font-family: "Times New Roman", Times, serif;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+    }
+
+    /* Texto */
+    .text-container {
+      position: relative;
+      z-index: 10;
+      font-size: 2em;
+      max-width: 80%;
+    }
+
+    /* Animación fadeIn por línea */
+    .text-container p {
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+    .text-container p:nth-child(1) { animation-delay: 0s; }
+    .text-container p:nth-child(2) { animation-delay: 2s; }
+    .text-container p:nth-child(3) { animation-delay: 4s; }
+    .text-container p:nth-child(4) { animation-delay: 6s; }
+    .text-container p:nth-child(5) { animation-delay: 8s; }
+    .text-container p:nth-child(6) { animation-delay: 10s; }
+    .text-container p:nth-child(7) { animation-delay: 12s; }
+    .text-container p:nth-child(8) { animation-delay: 14s; }
+    .text-container p:nth-child(9) { animation-delay: 16s; }
+    .text-container p:nth-child(10){ animation-delay: 18s; }
+    .text-container p:nth-child(11){ animation-delay: 20s; }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Corazones cayendo */
+    .heart {
+      position: absolute;
+      color: red;
+      font-size: 1.5em;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="text-container">
+    <p>Feliz Día del novio mi amor💕</p>
+    <p>Te quiero muchísimo, no sabes lo feliz que me haces</p>
+    <p>Desde que te conozco soy la persona más feliz, no sabes lo bien que me siento contigo, me siento muy afortunada de tenerte en mi vida</p>
+    <p>Como me encanta tu forma de ser</p>
+    <p>Tu preciosa sonrisa</p>
+    <p>Tu sentido del humor</p>
+    <p>Tus ojitos</p>
+    <p>Tu forma de ser conmigo</p>
+    <p>Simplemente tú...</p>
+    <p>Te quiero mucho mi amor ❤️</p>
+    <p>Espero que te guste este detalle</p>
+  </div>
+
+  <!-- Generador de corazones -->
+  <script>
+    // Corazones cayendo
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerText = '❤️';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+      heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 10000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
